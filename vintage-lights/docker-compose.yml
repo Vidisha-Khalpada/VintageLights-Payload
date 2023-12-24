@@ -26,5 +26,5 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: vintagelights
 
 volumes:
-  data:
+  mongodb_data:
   node_modules:
