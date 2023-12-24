@@ -16,15 +16,14 @@ services:
       - .env
 
   mongo:
-    image: mongo:latest
-    ports:
-      - '27017:27017'
-    command:
-      - --storageEngine=wiredTiger
+    image: mongo
+    container_name: mongodb_container
+    restart: always
     volumes:
-      - data:/data/db
-    logging:
-      driver: none
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: vintagelights
+      MONGO_INITDB_ROOT_PASSWORD: vintagelights
 
 volumes:
   data:
